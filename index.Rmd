@@ -11,6 +11,7 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+      ratio: '16:9'
 ---
 
 ```{r setup, include=FALSE}
@@ -47,7 +48,9 @@ duo(
 
   - **Difficult to exploit the data** (merge, visualization, etc.)
 
-![](https://media.giphy.com/media/l1KVaj5UcbHwrBMqI/giphy.gif)
+<center>
+<img src = "https://media.giphy.com/media/l1KVaj5UcbHwrBMqI/giphy.gif">
+</center>
 
 ---
 
@@ -65,7 +68,7 @@ We put a lot of effort into standardizing the data collected during the GreenEdg
 
 Most of the job has been done by these persons:
 
-1. Marie-Pier Amyot
+1. **Marie-Pier Amyot**
 
 2. Joannie Ferland
 
@@ -149,4 +152,6 @@ Each dataset contains a minimum number of columns that can be used to merge the 
 
 # Questions or comments?
 
-![](https://media.giphy.com/media/86nJuFHH25Uu4/giphy.gif)
+<center>
+<img src = "https://media.giphy.com/media/86nJuFHH25Uu4/giphy.gif">
+</center>
