@@ -1,12 +1,13 @@
 ---
-title: "Presentation of GreenEdge data"
-subtitle: "An overview"  
+title: "Presentation of GreenEdge data: An overview"
+subtitle: "Polar Marine Science Gordon Conference 2019 -- GreenEdge side meeting"  
 author: "Philippe Massicotte et al."
 date: "2019-03-22"
 output:
   xaringan::moon_reader:
     lib_dir: libs
     css: xaringan-themer.css
+    self_contained: false
     nature:
       highlightStyle: github
       highlightLines: true
@@ -22,7 +23,8 @@ options(htmltools.dir.version = FALSE)
 library(xaringanthemer)
 duo(
   code_font_family = "Fira Code",
-  code_font_url    = "https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css"
+  code_font_url    = "https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css",
+  text_font_google = google_font("Roboto", "400", "400i", "600i", "700")
 )
 ```
 
