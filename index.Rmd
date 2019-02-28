@@ -138,7 +138,7 @@ Each dataset contains a minimum number of columns that can be used to merge the 
 
 **Two data papers** in preparation:
 
-- Ice camp 2015-2016: Joannie Ferland
+- Ice camp 2015-2016: Joannie Ferland (Philippe Massicotte)
 
 - Amundsen 2016: Flavienne Bruyant
 
@@ -146,9 +146,12 @@ Each dataset contains a minimum number of columns that can be used to merge the 
 
 > Earth System Science Data (ESSD) is an international, interdisciplinary journal for the publication of articles on original research data (sets), furthering the reuse of high-quality data of benefit to Earth system sciences.
 
-- Formatted data will be deposed in a repository (possibly LEFE-CYBER) **along with the original data**.
+- Formatted data will be deposed on LEFE-CYBER **along with the original data**.
+  - When?
 
 - Data will be citable using the DOI's of the data papers.
+
+- An interactive website has been developped to dynamically browse, filter and download the data.
 
 ---
 
