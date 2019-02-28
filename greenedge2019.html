@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Presentation of GreenEdge data</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Philippe Massicotte et al." />
+    <meta name="date" content="2019-03-22" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Presentation of GreenEdge data
+## An overview
+### Philippe Massicotte et al.
+### 2019-03-22
+
+---
+
+
+
+
+
+
+# GreenEdge data
+
+--
+
+- Many sources of data:
+
+--
+
+  - Different formats (xls, csv, mat, bin, etc.)
+
+--
+
+  - Acquired at different temporal/spatial scales
+
+--
+
+  - Data structure highly variable among the researchers
+
+--
+
+  - **Difficult to exploit the data** (merge, visualization, etc.)
+
+![](https://media.giphy.com/media/l1KVaj5UcbHwrBMqI/giphy.gif)
+
+---
+
+# Importance of well-structured data
+
+&gt; Most data scientists spend only 20% of their time on actual data analysis and 80% of their time finding, cleaning, and reorganizing huge amounts of data, which is an inefficient data strategy.
+
+&lt;small&gt;
+https://www.infoworld.com/article/3228245/the-80-20-data-science-dilemma.html
+&lt;/small&gt;
+
+--
+
+We put a lot of effort into standardizing the data collected during the GreenEdge campaigns, so you do not have to.
+
+Most of the job has been done by these persons:
+
+1. Marie-Pier Amyot
+
+2. Joannie Ferland
+
+3. Etienne Ouellet
+
+4. Flavienne Bruyant
+
+---
+
+# What has been done
+
+- Screening the data for possible errors
+
+  - Outliers, duplicated information, etc.
+  
+- Regrouping similar data into single files
+
+  - Ex.: nutrients, absorption
+  
+---
+
+# Data formatting
+
+Some rules were used to format the data:
+
+1. Only use small case letters in variable names.
+
+2. No special characters (#$%?&amp;*éê...)
+
+3. Dates should be ISO format: yyy-mm-dd HH:MM:SS.
+
+4. Units should be added at the end of the variable name (Ex.: `depth_m`).
+
+5. Data should be tidy (i.e.: lines = observations, columns = variables).
+
+---
+
+# Data formatting
+
+Each dataset contains a minimum number of columns that can be used to merge the data. **For the ice camp**:
+
+1. date
+
+2. date_time
+
+3. latitude (`67.47973333`)
+
+4. longitude (`-63.78953333`)
+
+5. sample_type (`water`, `ice`, `meltpond`, ...)
+
+6. sample_source(`niskin` or `underice`, ...)
+
+7. depth_m (NA if sample_type is ice)
+
+8. snow_thickness (`thin_snow` or `thick_snow`)
+
+9. mission (`ice_camp_2015`, `ice_camp_2016`)
+
+10. PI
+
+---
+
+# Data papers
+
+**Two data papers** in preparation:
+
+- Ice camp 2015-2016: Joannie Ferland
+
+- Amundsen 2016: Flavienne Bruyant
+
+- For possible publication in **Earth System Science Data (ESSD)** (I.F.: 8.8)
+
+&gt; Earth System Science Data (ESSD) is an international, interdisciplinary journal for the publication of articles on original research data (sets), furthering the reuse of high-quality data of benefit to Earth system sciences.
+
+- Formatted data will be deposed in a repository (possibly LEFE-CYBER) **along with the original data**.
+
+- Data will be citable using the DOI's of the data papers.
+
+---
+
+# Questions or comments?
+
+![](https://media.giphy.com/media/86nJuFHH25Uu4/giphy.gif)
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
