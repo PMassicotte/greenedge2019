@@ -44,19 +44,19 @@ duo(
 
 --
 
-  - Different formats (xls, csv, mat, bin, etc.)
+  - Different formats (xls, csv, mat, dat, etc.).
 
 --
 
-  - Acquired at different temporal/spatial scales
+  - Acquired at different temporal/spatial scales.
 
 --
 
-  - Data structure highly variable among the researchers
+  - Data structure highly variable among the researchers.
 
 --
 
-  - **Difficult to exploit the data** (merge, visualization, etc.)
+  - **Difficult to exploit the data** (merge, visualization, etc.).
 
 <center>
 <img src = "https://media.giphy.com/media/l1KVaj5UcbHwrBMqI/giphy.gif", height="250">
@@ -102,13 +102,18 @@ Most of the job has been done by these persons:
 
 # What has been done
 
-- Screening the data for possible errors
+- Screening the data for possible errors.
 
   - Outliers, duplicated information, etc.
   
-- Regrouping similar data into single files
+- Regrouping similar data into single files.
 
   - Ex.: nutrients, absorption
+  
+- **Data formatting**
+
+  - Data structure: see next slide.
+  - Uniformisation: spatial coordinates are the same for all the datasets.
   
 ---
 
@@ -116,15 +121,15 @@ Most of the job has been done by these persons:
 
 Some rules were used to format the data:
 
-1. Only use small case letters in variable names.
+- Only use small case letters in variable names.
 
-2. No special characters (#$%?&*éê...)
+- No special characters (#$%?&*éê...).
 
-3. Dates should be ISO format: yyy-mm-dd HH:MM:SS.
+- Dates should be ISO format: yyy-mm-dd HH:MM:SS.
 
-4. Units should be added at the end of the variable name (Ex.: `depth_m`).
+- Units should be added at the end of the variable name (Ex.: `depth_m`).
 
-5. Data should be tidy (i.e.: lines = observations, columns = variables).
+- Data should be tidy (i.e.: lines = observations, columns = variables).
 
 ---
 
@@ -132,25 +137,23 @@ Some rules were used to format the data:
 
 Each dataset contains a minimum number of columns that can be used to merge the data. **For the ice camp**:
 
-1. date
+- date
 
-2. date_time
+- latitude (`67.479`)
 
-3. latitude (`67.47973333`)
+- longitude (`-63.789`)
 
-4. longitude (`-63.78953333`)
+- sample_type (`water`, `ice`, `meltpond`, ...)
 
-5. sample_type (`water`, `ice`, `meltpond`, ...)
+- sample_source (`niskin` or `underice`, ...)
 
-6. sample_source(`niskin` or `underice`, ...)
+- depth_m (`NA` if sample_type is ice)
 
-7. depth_m (NA if sample_type is ice)
+- snow_thickness (`thin_snow` or `thick_snow`)
 
-8. snow_thickness (`thin_snow` or `thick_snow`)
+- mission (`ice_camp_2015`, `ice_camp_2016`, `amundsen_2016`)
 
-9. mission (`ice_camp_2015`, `ice_camp_2016`)
-
-10. PI
+- PI
 
 ---
 
