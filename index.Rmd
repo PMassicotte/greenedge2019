@@ -16,7 +16,7 @@ output:
 ---
 <style type="text/css">
 .remark-slide-content {
-    font-size: 35px;
+    font-size: 25px;
     padding: 1em 4em 1em 4em;
 }
 .remark-inline-code {
@@ -32,7 +32,7 @@ library(xaringanthemer)
 duo(
   code_font_family = "Fira Code",
   code_font_url    = "https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css",
-  text_font_google = google_font("Yanone Kaffeesatz", "400", "400i", "600i", "700")
+  text_font_google = google_font("Yanone Kaffeesatz")
 )
 ```
 
@@ -58,12 +58,8 @@ duo(
 
   - **Difficult to exploit the data** (merge, visualization, etc.)
 
----
-
-# My reaction when opening an unformatted data file
-
 <center>
-<img src = "https://media.giphy.com/media/l1KVaj5UcbHwrBMqI/giphy.gif">
+<img src = "https://media.giphy.com/media/l1KVaj5UcbHwrBMqI/giphy.gif", height="250">
 </center>
 
 ---
@@ -137,14 +133,23 @@ Some rules were used to format the data:
 Each dataset contains a minimum number of columns that can be used to merge the data. **For the ice camp**:
 
 1. date
+
 2. date_time
+
 3. latitude (`67.47973333`)
+
 4. longitude (`-63.78953333`)
+
 5. sample_type (`water`, `ice`, `meltpond`, ...)
+
 6. sample_source(`niskin` or `underice`, ...)
+
 7. depth_m (NA if sample_type is ice)
+
 8. snow_thickness (`thin_snow` or `thick_snow`)
+
 9. mission (`ice_camp_2015`, `ice_camp_2016`)
+
 10. PI
 
 ---
@@ -171,6 +176,7 @@ Each dataset contains a minimum number of columns that can be used to merge the 
 - Data will be citable using the DOI's of the data papers.
 
 - An interactive website has been developped to dynamically browse, filter and download the data.
+  - Only available at Takuvik for the moment.
 
 ---
 
