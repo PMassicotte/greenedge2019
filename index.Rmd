@@ -36,7 +36,7 @@ duo(
 )
 ```
 
-# GreenEdge data: the challenge!
+# GreenEdge data: the challenges!
 
 --
 
@@ -169,6 +169,16 @@ Each dataset contains a minimum number of columns that can be used to merge the 
 - For possible publication in **Earth System Science Data (ESSD)** (I.F.: 8.8)
 
 > Earth System Science Data (ESSD) is an international, interdisciplinary journal for the publication of articles on original research data (sets), furthering the reuse of high-quality data of benefit to Earth system sciences.
+
+---
+
+# Ice camp data paper
+
+<figure>
+  <center><img src="images/beam_attenuation.png" height="500"></center>
+</figure>
+
+<!-- ![](beam_attenuation.png) -->
 
 ---
 
