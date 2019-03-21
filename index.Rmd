@@ -12,7 +12,7 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-      ratio: '16:9'
+      ratio: '3:2'
 ---
 <style type="text/css">
 .remark-slide-content {
@@ -191,6 +191,84 @@ Each dataset contains a minimum number of columns that can be used to merge the 
 
 - An interactive website has been developped to dynamically browse, filter and download the data.
   - Only available at Takuvik for the moment.
+
+---
+
+# Nutrients 
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.height=5, fig.width=7, fig.align='center', dev='svg'}
+library(tidyverse)
+library(readxl)
+library(data.table)
+
+theme_set(theme_bw(base_size = 14))
+
+jet <- read_excel("c:/Users/pmass/Desktop/nut/Nutrients_GreenEdge_all_JET.xlsx") %>% 
+  janitor::clean_names() %>% 
+  mutate(date = lubridate::parse_date_time(date_mm_dd_yyyy, "mdY")) %>% 
+  select(station, depth_m, nitrite_u_m:ammonium_u_m) %>% 
+  mutate(source = "jet") %>% 
+  mutate(station = parse_number(station)) %>% 
+  mutate(depth2 = depth_m)
+
+# jet
+
+mars <- read_excel("c:/Users/pmass/Desktop/nut/GE_Amundsen_2016_nutrients_Marseille_20180628.xlsx", skip = 7) %>% 
+  janitor::clean_names() %>% 
+  mutate(date = lubridate::parse_date_time(mon_day_yr, "mdY")) %>% 
+  select(station, depth_m = detph_m, nitrite_u_m:phosphate_u_m) %>% 
+  mutate(source = "mars") %>% 
+  mutate(station = parse_number(station)) 
+
+# mars
+
+jet <- setkey(data.table(jet), station, depth_m)
+mars <- setkey(data.table(mars), station, depth_m)
+
+res <- jet[mars, roll = "nearest"] %>% 
+  filter(abs(depth_m - depth2) <= 2)
+
+p1 <- res %>% 
+  ggplot(aes(x = nitrite_u_m, y = i.nitrite_u_m)) + 
+  geom_point() +
+  geom_abline(color = "red", lty = 2) +
+  scale_x_continuous(limits = c(0, 0.2)) +
+  xlab("Nitrite (JET)") +
+  ylab("Nitrite (MIO)") +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "Nitrite")
+
+p2 <- res %>% 
+  ggplot(aes(x = nitrate_u_m, y = i.nitrate_u_m)) + 
+  geom_point() +
+  geom_abline(color = "red", lty = 2) +
+  xlab("Nitrate (JET)") +
+  ylab("Nitrate (MIO)") +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "Nitrate")
+
+p3 <- res %>% 
+  ggplot(aes(x = phosphate_u_m, y = i.phosphate_u_m)) +
+  geom_point() +
+  geom_abline(color = "red", lty = 2) +
+  xlab("Phosphate (JET)") +
+  ylab("Phosphate (MIO)") +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "Phosphate")
+
+p4 <- res %>% 
+  ggplot(aes(x = silicate_u_m, y = i.silicate_u_m)) + 
+  geom_point() +
+  geom_abline(color = "red", lty = 2) +
+  xlab("Silicate (JET)") +
+  ylab("Silicate (MIO)")  +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "Silicate")
+
+cowplot::plot_grid(p1, p2, p3, p4, ncol = 2, labels = "AUTO")
+
+```
+
 
 ---
 
