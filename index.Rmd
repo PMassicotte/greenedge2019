@@ -236,7 +236,8 @@ p1 <- res %>%
   xlab("Nitrite (JET)") +
   ylab("Nitrite (MIO)") +
   geom_smooth(method = "lm", se = FALSE) +
-  labs(title = "Nitrite")
+  labs(title = "Nitrite") +
+  theme(plot.title = element_text(face = "bold"))
 
 p2 <- res %>% 
   ggplot(aes(x = nitrate_u_m, y = i.nitrate_u_m)) + 
@@ -245,7 +246,8 @@ p2 <- res %>%
   xlab("Nitrate (JET)") +
   ylab("Nitrate (MIO)") +
   geom_smooth(method = "lm", se = FALSE) +
-  labs(title = "Nitrate")
+  labs(title = "Nitrate") +
+  theme(plot.title = element_text(face = "bold"))
 
 p3 <- res %>% 
   ggplot(aes(x = phosphate_u_m, y = i.phosphate_u_m)) +
@@ -254,7 +256,8 @@ p3 <- res %>%
   xlab("Phosphate (JET)") +
   ylab("Phosphate (MIO)") +
   geom_smooth(method = "lm", se = FALSE) +
-  labs(title = "Phosphate")
+  labs(title = "Phosphate") +
+  theme(plot.title = element_text(face = "bold"))
 
 p4 <- res %>% 
   ggplot(aes(x = silicate_u_m, y = i.silicate_u_m)) + 
@@ -263,9 +266,10 @@ p4 <- res %>%
   xlab("Silicate (JET)") +
   ylab("Silicate (MIO)")  +
   geom_smooth(method = "lm", se = FALSE) +
-  labs(title = "Silicate")
+  labs(title = "Silicate") +
+  theme(plot.title = element_text(face = "bold"))
 
-cowplot::plot_grid(p1, p2, p3, p4, ncol = 2, labels = "AUTO")
+cowplot::plot_grid(p1, p2, p3, p4, ncol = 2, align = "hv")
 
 ```
 
